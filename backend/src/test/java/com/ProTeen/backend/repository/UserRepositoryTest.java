@@ -44,6 +44,16 @@ public class UserRepositoryTest {
     }
 
     @Test
+    @DisplayName("해당 nickname 존재하는지")
+    void existsByNickname() {
+        String nickname = "Kim";
+        Boolean expected = userRepository.existsByNickname(nickname);
+        Boolean actual = true;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     @DisplayName("Id로 role 조회하기")
     void getRoleById() {
         String userId = "2";

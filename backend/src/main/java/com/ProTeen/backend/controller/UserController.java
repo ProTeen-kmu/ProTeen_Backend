@@ -89,19 +89,10 @@ public class UserController {
         }
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<String> tokentest() {
-        return ResponseEntity.ok("OKOKOKOK");
-    }
-
+    // ROLE_USER을 가진 사용자만 ok가 뜸 (권한 테스트용)
     @GetMapping("/user/enter")
     public ResponseEntity<String> enter() {
         return ResponseEntity.ok("OKOKOKOK");
     }
 
-    @GetMapping("/username")
-    @ResponseBody
-    public String currentUserName(Principal principal) {
-        return principal.getName();
-    }
 }

@@ -48,4 +48,16 @@ public class UserService {
         authority.add(new SimpleGrantedAuthority(role));
         return authority;
     }
+
+
+    public boolean userIdDuplicated(String userID) {
+        return userRepository.existsByUserId(userID);
+    }
+
+    public boolean nicknameDuplicated(String nickname) {
+        return userRepository.existsByNickname(nickname);
+    }
+
+
+
 }

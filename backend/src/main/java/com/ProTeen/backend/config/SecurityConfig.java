@@ -38,6 +38,7 @@ public class SecurityConfig {
                 // 세션 기반이 아님을 선언
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
+                // 임시로 해놓은 권한설정임 나중에 필요에 맞게 고쳐쓰기
                 .authorizeHttpRequests()
                     .requestMatchers("/user/**").hasRole("USER")
                     .requestMatchers("/**").permitAll();
